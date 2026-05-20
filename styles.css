@@ -1,10 +1,10 @@
 :root {
-  --color-bg: #fbfaf7;
-  --color-surface: #ffffff;
-  --color-ink: #1c1c1c;
-  --color-muted: #5a5a5a;
-  --color-accent: #2e6bff;
-  --color-border: #e6e3dc;
+  --color-bg: #05070f;
+  --color-surface: rgba(10, 18, 40, 0.82);
+  --color-ink: #f3f7ff;
+  --color-muted: #9fb4d1;
+  --color-accent: #7c9cff;
+  --color-border: rgba(255, 255, 255, 0.12);
   --radius: 10px;
   --max-width: 720px;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -19,8 +19,24 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   color: var(--color-ink);
-  background: var(--color-bg);
+  background: radial-gradient(circle at top, rgba(46, 107, 255, 0.12), transparent 15%),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.08), transparent 12%),
+    linear-gradient(180deg, #09111f 0%, #05070f 55%, #000 100%);
   line-height: 1.55;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 0),
+    radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 0),
+    radial-gradient(circle, rgba(255, 255, 255, 0.25) 1px, transparent 0);
+  background-size: 80px 80px, 140px 140px, 220px 220px;
+  opacity: 0.45;
 }
 
 a {
